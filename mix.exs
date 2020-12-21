@@ -2,7 +2,7 @@ defmodule TemperatureBabyphone.MixProject do
   use Mix.Project
 
   @app :temperature_babyphone
-  @version "0.1.1"
+  @version "0.1.2"
   @all_targets [:rpi, :rpi0, :rpi2, :rpi3, :rpi3a, :rpi4, :bbb, :osd32mp1, :x86_64]
 
   def project do
@@ -31,6 +31,11 @@ defmodule TemperatureBabyphone.MixProject do
   defp deps do
     [
       {:nerves_dht, git: "https://github.com/groma84/nerves_dht.git", tag: "1.1.5", targets: @all_targets},
+
+      {:circuits_gpio, "~> 0.4"},
+      {:circuits_spi, "~> 0.1"},
+      {:power_control, "~> 0.2.0"},
+
 
       # Dependencies for all targets
       {:nerves, "~> 1.7.0", runtime: false},

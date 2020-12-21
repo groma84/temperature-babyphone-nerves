@@ -1,11 +1,13 @@
 import Config
 
+
+
 # Use shoehorn to start the main application. See the shoehorn
 # docs for separating out critical OTP applications such as those
 # involved with firmware updates.
 
 config :shoehorn,
-  init: [:nerves_runtime, :nerves_pack],
+  init: [:nerves_runtime, :nerves_pack, :power_control],
   app: Mix.Project.config()[:app]
 
 # Nerves Runtime can enumerate hardware devices and send notifications via
@@ -100,6 +102,11 @@ config :mdns_lite,
       port: 4369
     }
   ]
+
+config :power_control,
+  cpu_governor: :powersave,
+  disable_leds: false,
+  disable_hdmi: true
 
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
