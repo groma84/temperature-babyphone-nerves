@@ -31,6 +31,6 @@ defmodule MicrophoneAnalog do
   end
 
   defp schedule_read() do
-    Process.send_after(self(), :read, 10_000)
+    Process.send_after(self(), :read, 100)
   end
 end

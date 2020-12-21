@@ -15,7 +15,8 @@ defmodule TemperatureBabyphone.Application do
         # Children for all targets
         # Starts a worker by calling: TemperatureBabyphone.Worker.start_link(arg)
         # {TemperatureBabyphone.Worker, arg},
-        MicrophoneDigital,
+        Spi,
+        #MicrophoneDigital,
         MicrophoneAnalog
       ] ++ children(target())
 

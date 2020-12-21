@@ -104,7 +104,7 @@ config :mdns_lite,
   ]
 
 config :power_control,
-  cpu_governor: :powersave,
+  cpu_governor: :performance,
   disable_leds: false,
   disable_hdmi: true
 
